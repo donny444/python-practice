@@ -18,22 +18,22 @@ def bmi():
 def bmr():
     print("BMR Calculating...")
     print("Your BMR is : " + str(bmrVal))
-def tdee(x):
+def tdee(bmrVal):
     print("TDEE Calculating...")
     if workout == "a":
-        tdeeVal = 1.2*x
+        tdeeVal = 1.2*bmrVal
         print("Your TDEE is " + str(tdeeVal))
     elif workout == "b":
-        tdeeVal = 1.375*x
+        tdeeVal = 1.375*bmrVal
         print("Your TDEE is " + str(tdeeVal))
     elif workout == "c":
-        tdeeVal = 1.55*x
+        tdeeVal = 1.55*bmrVal
         print("Your TDEE is " + str(tdeeVal))
     elif workout == "d":
-        tdeeVal = 1.7*x
+        tdeeVal = 1.7*bmrVal
         print("Your TDEE is " + str(tdeeVal))
     elif workout == "e":
-        tdeeVal = 1.9*x
+        tdeeVal = 1.9*bmrVal
         print("Your TDEE is " + str(tdeeVal))
     return tdeeVal
 bmi()
