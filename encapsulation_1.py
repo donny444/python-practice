@@ -13,16 +13,15 @@ class videogame1:
         print("Category: {}".format(self._category))
         print("Price: {}".format(self._price))
         
-    def __del__(self):
-        print("Destructure")
+    #def __del__(self):
+    #    print("Destructure")
 
 class videogame2(videogame1):
     def __init__(self, name, category, price, platform):
         self._platform = platform
         videogame1.__init__(self, name, category, price)
-        videogame1._display(self)
         print("Platform: {}".format(self._platform))
 
 vg1 = videogame1("Elden Ring", "Soul-Like RPG", 69.99)
-print("\n")
+#print("\n")
 vg2 = videogame2("GTA V", "Open World", 59.99, "PC")
