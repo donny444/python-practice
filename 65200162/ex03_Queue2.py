@@ -5,18 +5,18 @@ rear = 0
 class Queue:
     def __init__(self, max):
         self.max = max
-    def add(self, data):
+    def Enqueue(self, data):
         global queuedata
         global front
         global rear
-        if(rear < self.max + 1):
-            rear += 1
+        if(rear < self.max):
             queuedata.append(data)
+            rear += 1
             if(not front):
                 front = 1
             return 1
         return -1
-    def get(max):
+    def Dequeue(max):
         global queuedata
         global front
         global rear
@@ -42,12 +42,14 @@ class Queue:
         print("\n")
         
 q = Queue(5)
-q.add(1)
-q.add(2)
-q.add(3)
-q.add(89)
-q.add(34)
+q.Enqueue(1)
+q.Enqueue(2)
+q.Enqueue(3)
+q.Enqueue(89)
+q.Enqueue(34)
+q.Enqueue(66)
+q.Enqueue(77)
 q.show()
 print("\n")
 for i in range(rear):
-    print(f"{i+1}. get data {q.get()}")
+    print(f"{i+1}. Dequeue data {q.Dequeue()}")

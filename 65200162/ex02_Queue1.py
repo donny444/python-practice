@@ -3,18 +3,18 @@ queuedata = []
 front = 0
 rear = 0
 
-def add(data):
+def Enqueue(data):
     global front
     global rear
-    if(rear < max + 1):
-        rear += 1
+    if(rear < max):
         queuedata.append(data)
+        rear += 1
         if(not front):
             front = 1
         return 1
     return -1
 
-def get():
+def Dequeue():
     global front
     global rear
     temp = None
@@ -36,19 +36,21 @@ def show():
         print(f"{queuedata[i]}\t")
     print("\n")
 
-add(5)
-add(6)
-add(7)
-add(8)
-add(9)
-add(10)
-add(11)
-add(12)
-add(13)
-print(f"add result = {add(14)}")
-print(f"add result = {add(82)}")
+Enqueue(5)
+Enqueue(6)
+Enqueue(7)
+Enqueue(8)
+Enqueue(9)
+Enqueue(10)
+Enqueue(11)
+Enqueue(12)
+Enqueue(13)
+print(f"Enqueue result = {Enqueue(14)}")
+print(f"Enqueue result = {Enqueue(82)}")
+print(f"Enqueue result = {Enqueue(66)}")
+print(f"Enqueue result = {Enqueue(77)}")
 
 show()
 print("\n")
 for i in range(rear):
-    print(f"{i+1}. get data = {get()}")
+    print(f"{i+1}. Dequeue data = {Dequeue()}")
