@@ -1,3 +1,4 @@
+#Dictionary Data Type
 abbreviation = {
     "AFK": "Away From Keyboard",
     "BRB": "Be Right Back",
@@ -9,4 +10,9 @@ abbreviation = {
     "WFH": "Work From Home",
     "WYATB": "Wish You All The Best"
 }
-print(abbreviation.get("WY",'"IDK" means "I Don\'t Know"'))
+
+#Key Not Found
+print(abbreviation.get("WY", '"IDK" means "I Don\'t Know"\n'))
+
+#Key Found
+print(abbreviation.get("NSFW", '"IDK" means "I Don\'t Know"\n'))

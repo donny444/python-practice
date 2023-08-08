@@ -2,7 +2,7 @@ print("Welcome to age check")
 try:
     age = int(input("Enter your age : "))
 except:
-    print("Invalid input")
+    print("Invalid input") #Can't convert to integer
 if age < 2:
     print("You are infant")
 elif 2 <= age <= 12:

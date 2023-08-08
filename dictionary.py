@@ -14,4 +14,4 @@ monthConversions = {
 }
 print(monthConversions["Feb"])
 print(monthConversions.get("Feb"))
-print(monthConversions.get("Feb", "Nope"))
+print(monthConversions.get("Kuy", "Nope")) #If the key not found, print "Nope"

@@ -13,3 +13,5 @@ http_status_code = {
     505: "HTTP Version Not Supported"
 }
 print(http_status_code[505])
+
+#I will add more later;

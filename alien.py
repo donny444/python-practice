@@ -1,5 +1,6 @@
 class alien:
     def __init__ (self, color, body, planet):
+        #Protected
         self._color = color
         self._body = body
         self._planet = planet
@@ -13,6 +14,24 @@ class alien:
 
     def __del__(self):
         print("Alien Destructed")
+
+class human:
+    def __init__ (self, gender, race, age):
+        self._gender = gender
+        self._race = race
+        self._age = age
+        
+        self._display()
+
+    def _display(self):
+        print("This human is {}".format(self._gender))
+        print("This human is {}".format(self._race))
+        print("This human is {}".format(self._age))
+    
+    def __del__(self):
+        print("HUman Destructed")
+
+#Polymorphism: same function name being used for different classes
 
 class avatar(alien):
     def __init__ (self, color, body, planet, tribe):
@@ -36,9 +55,11 @@ class titan(alien):
     def __del__(self):
         print("Titan Destructed")
 
-jakesully = avatar("Blue", "Tall", "Pandora", "Jungle")
-print("\n")
-thanos = titan("Purple", "Big", "Titan", str(True))
+#jakesully = avatar("Blue", "Tall", "Pandora", "Jungle")
+#print("\n")
+#thanos = titan("Purple", "Big", "Titan", str(True))
 
-del jakesully, thanos
+#del jakesully, thanos #Destructor
+
+travisscott = human("Male", "African-American", 32);
 print("\nEnding Program")

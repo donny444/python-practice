@@ -12,5 +12,5 @@ class outfit:
     def __str__(self):
         return f"Finished from the mother class"
 
-#obj1 = outfit("Sneaker", "Adidas", 3500)
-#print(obj1)
+obj1 = outfit("Sneaker", "Adidas", 3500)
+print(obj1)
