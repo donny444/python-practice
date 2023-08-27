@@ -52,7 +52,51 @@ class LinkedList:
             self.tail = None
         temp.next = None
         return temp
-
-LinkedList.push(1)
-LinkedList.push(2)
-LinkedList.push(3)
+    def get(self, index):
+        if(index < 0 or index >= self.length): return None
+        temp = self.head
+        for i in range(index):
+            temp = temp.next
+        return temp
+    def set(self, index, value):
+        temp = self.get(index)
+        if (temp):
+            temp.value = value
+            return True
+        return False
+    def insert(self, index, value):
+        if(index < 0 or index >= self.length): return False
+        if(index == self.length): return self.push(value)
+        if(index == 0): return self.unshift(value)
+        newNode = Node(value)
+        temp = self.get(index - 1)
+        newNode.next = newNode
+        self.length += 1
+        return True
+    def remove(self, index):
+        if(index < 0 or index >= self.length): return None
+        if(index == 0): return self.shift()
+        if(index == self.length - 1): return self.pop()
+        before = self.get(index - 1)
+        temp = before.next
+        before.next = temp.next
+        temp.next = None
+        self.length -= 1
+        return temp
+    def reverse(self):
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+        next = temp.next
+        prev = None
+        for i in range(self.length):
+            next = temp.next
+            temp.next = prev
+            prev = temp
+            temp = next
+        return self
+    def showList(self):
+        temp = self.head
+        while(temp):
+            print(temp.value)
+            temp = temp.next
