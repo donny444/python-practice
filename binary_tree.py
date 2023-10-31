@@ -45,6 +45,12 @@ class BinaryTree:
             self.postorder(node.right)
             print(node.value, end=" ")
 
+    def removeallnodes(self, node):
+        if node is not None:
+            self.removeallnodes(node.left)
+            self.removeallnodes(node.right)
+            node = None
+
 #Usage Example
 tree = BinaryTree()
 values = [1, 2, 3, 4, 5, 6, 7]
