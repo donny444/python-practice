@@ -65,12 +65,13 @@ class LinkedList:
             return True
         return False
     def insert(self, index, value):
-        if(index < 0 or index >= self.length): return False
+        if(index < 0 or index > self.length): return False
         if(index == self.length): return self.push(value)
         if(index == 0): return self.unshift(value)
         newNode = Node(value)
         temp = self.get(index - 1)
-        newNode.next = newNode
+        newNode.next = temp.next
+        temp.next = newNode
         self.length += 1
         return True
     def remove(self, index):
@@ -97,6 +98,39 @@ class LinkedList:
         return self
     def showList(self):
         temp = self.head
+        print("Nodes in the Linked List: ", end="")
         while(temp):
-            print(temp.value)
+            print(temp.value, end=" ")
             temp = temp.next
+
+obj = LinkedList(5)
+arr = [1, 2, 3, 6, 9, 8]
+for i in range(len(arr)): # 5, 1, 2, 3, 6, 9, 8
+    obj.push(arr[i])
+obj.pop() # 5, 1, 2, 3, 6, 9
+obj.unshift(7) # 7, 5, 1, 2, 3, 6, 9
+obj.shift()# 5, 1, 2, 3, 6, 9
+
+print("Value at the specfic index: " + str(obj.get(4).value)) # 6
+obj.showList()
+
+print("\n")
+
+obj.insert(6, 4)
+obj.insert(0, 4)
+print(obj.insert(3, 5))
+obj.showList()
+
+print("\n")
+
+print(obj.remove(-1))
+print(obj.remove(9))
+obj.remove(0)
+obj.remove(7)
+obj.remove(2)
+obj.showList()
+
+print("\n")
+
+obj.reverse()
+obj.showList()
