@@ -1,4 +1,4 @@
-import random;
+import random
 
 result = []
 one = 0
