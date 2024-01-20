@@ -8,7 +8,7 @@ four = 0
 five = 0
 six = 0
 
-for i in range(500):
+for i in range(50000000):
     roll = random.randint(1, 6)
     result.append(roll)
 
@@ -26,9 +26,13 @@ for i in range(len(result)):
     if(result[i] == 6):
         six += 1
 
-print(one/len(result))
-print(two/len(result))
-print(three/len(result))
-print(four/len(result))
-print(five/len(result))
-print(six/len(result))
+f_1 = one / len(result)
+f_2 = two / len(result)
+f_3 = three / len(result)
+f_4 = four / len(result)
+f_5 = five / len(result)
+f_6 = six / len(result)
+
+e_x = 1*f_1 + 2*f_2 + 3*f_3 + 4*f_4 + 5*f_5 + 6*f_6
+
+print(e_x)
