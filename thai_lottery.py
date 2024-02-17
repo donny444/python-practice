@@ -1,4 +1,5 @@
 import random
+import sys
 
 win1st = ""
 win3head = []
@@ -35,18 +36,22 @@ print(win3tail)
 print("รางวัลเลขท้าย2ตัว: " + win2tail)
 
 prize = 0
-lottery = input("Enter your lottery digits: ")
+validated = False
 
-try:
-    if(lottery == ""):
-        raise ValueError("Please enter the lottery digits")
-    if(len(lottery) != 6):
-        raise ValueError("Lottery must have 6 digits")
-    for i in range(6):
-        if(((lottery[i] != 0) or (lottery[i] != 1) or (lottery[i] != 2) or (lottery[i] != 3) or (lottery[i] != 4) or (lottery[i] != 5) or (lottery[i] != 6) or (lottery[i] != 7) or (lottery[i] != 8) or (lottery[i] != 9))):
-            raise ValueError("Lottery must contains only number")
-except ValueError as e:
-    print(e)
+while(not validated):
+    try:
+        lottery = input("Enter your lottery digits: ")
+        if(lottery == ""):
+            raise ValueError("Please enter the lottery digits")
+        if(len(lottery) != 6):
+            raise ValueError("Lottery must have 6 digits")
+        for i in range(6):
+            if(not ((lottery[i] != "0") or (lottery[i] != "1") or (lottery[i] != "2") or (lottery[i] != "3") or (lottery[i] != "4") or (lottery[i] != "5") or (lottery[i] != "6") or (lottery[i] != "7") or (lottery[i] != "8") or (lottery[i] != "9"))):
+                raise ValueError("Lottery must contains only number")
+        validated = True
+    except ValueError as e:
+        print(e)
+    
 
 for i in range(6):
     if(lottery[i] == win1st[i]):
