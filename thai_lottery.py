@@ -40,13 +40,15 @@ validated = False
 
 while(not validated):
     try:
-        lottery = input("Enter your lottery digits: ")
+        lottery = input("Enter your lottery digits[press C to exit]: ")
+        if(lottery == "C" or lottery == "c"):
+            sys.exit()
         if(lottery == ""):
             raise ValueError("Please enter the lottery digits")
         if(len(lottery) != 6):
             raise ValueError("Lottery must have 6 digits")
         for i in range(6):
-            if(not ((lottery[i] != "0") or (lottery[i] != "1") or (lottery[i] != "2") or (lottery[i] != "3") or (lottery[i] != "4") or (lottery[i] != "5") or (lottery[i] != "6") or (lottery[i] != "7") or (lottery[i] != "8") or (lottery[i] != "9"))):
+            if(not ((lottery[i] == "0") or (lottery[i] == "1") or (lottery[i] == "2") or (lottery[i] == "3") or (lottery[i] == "4") or (lottery[i] == "5") or (lottery[i] == "6") or (lottery[i] == "7") or (lottery[i] == "8") or (lottery[i] == "9"))):
                 raise ValueError("Lottery must contains only number")
         validated = True
     except ValueError as e:
